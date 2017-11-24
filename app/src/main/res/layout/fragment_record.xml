@@ -17,11 +17,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:text="Accelerometer Data"/>
+            android:text="Gyroscope Data"
+            android:textAlignment="center" />
     <TextView
         android:id="@+id/acc_x_label"
         android:layout_width="match_parent"
@@ -45,11 +46,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:text="Gyro Data"/>
+            android:text="Accelerometer Data"
+            android:textAlignment="center" />
         <TextView
             android:id="@+id/gyro_x_label"
             android:layout_width="match_parent"
