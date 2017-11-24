@@ -52,14 +52,11 @@ public class RideListFragment extends Fragment {
 
         Log.d(TAG, "Loaded up Ride List");
 
-
         return view;
     }
 
     private class RideListHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         // Properties of the cell
-
-
 
         public RideListHolder(View itemView) {
             super(itemView);
