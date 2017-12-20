@@ -14,30 +14,66 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="250dp">
 
-            <ImageView
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:src="@drawable/dummy_blur"
-                android:scaleType="centerCrop"
-                android:background="@color/colorAccent">
-            </ImageView>
-
-            <RelativeLayout
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_centerInParent="true">
-
-                <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/bg_profile_picture"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_centerInParent="true"
-                    app:civ_border_width="3dp"
-                    app:civ_border_color="#ffff"
-                    android:src="@drawable/dummy"/>
+                    android:src="@drawable/dummy_blur"
+                    android:scaleType="centerCrop"
+                    android:background="@color/colorAccent">
+                </ImageView>
 
-            </RelativeLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/dark_overlay"/>
+            </FrameLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:orientation="vertical">
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="40dp"
+                    android:layout_height="150dp"
+                    android:layout_centerInParent="true">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/main_profile_picture"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:civ_border_width="3dp"
+                        app:civ_border_color="#ffff"
+                        android:src="@drawable/dummy"/>
+
+                    <Button
+                        android:id="@+id/profile_image_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent"/>
+
+                </FrameLayout>
+
+
+                <TextView
+                    android:id="@+id/username_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:layout_marginTop="14dp"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:text="JohnDoe1991"/>
+            </LinearLayout>
 
 
 
@@ -46,109 +82,227 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/separatorColor">
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:padding="10dp"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical"
+                    android:background="@color/card_background">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:paddingBottom="5dp"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:text="Total Rides"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginEnd="30dp"
+                        android:layout_marginStart="30dp"
+                        android:background="@color/separatorColor">
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/total_rides_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:paddingTop="10dp"
+                        android:textSize="22sp"
+                        android:text="4"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:padding="10dp"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical"
+                    android:background="@color/card_background">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:paddingBottom="5dp"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:text="Public Rides"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginEnd="30dp"
+                        android:layout_marginStart="30dp"
+                        android:background="@color/separatorColor">
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/public_rides_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:paddingTop="10dp"
+                        android:textSize="22sp"
+                        android:text="3"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
         </RelativeLayout>
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="6dp">
+            android:layout_margin="4dp"
+            android:padding="10dp"
+            android:layout_weight="0.5"
+            android:orientation="vertical"
+            android:background="@color/card_background">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
+                android:textAlignment="center"
+                android:paddingBottom="5dp"
+                android:textSize="14sp"
                 android:textStyle="bold"
                 android:text="Name"/>
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginStart="30dp"
+                android:background="@color/separatorColor">
+            </RelativeLayout>
+
             <TextView
+                android:id="@+id/name_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="16dp"
+                android:textAlignment="center"
+                android:paddingTop="10dp"
                 android:textSize="22sp"
                 android:text="John Doe"/>
-        </RelativeLayout>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/separatorColor">
-        </RelativeLayout>
+        </LinearLayout>
 
-        <RelativeLayout
+
+
+
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="6dp">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:text="Username"/>
+            android:layout_margin="4dp"
+            android:padding="10dp"
+            android:layout_weight="0.5"
+            android:orientation="vertical"
+            android:background="@color/card_background">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="16dp"
+                android:textAlignment="center"
+                android:paddingBottom="5dp"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:text="Email Address"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginStart="30dp"
+                android:background="@color/separatorColor">
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/email_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:paddingTop="10dp"
                 android:textSize="22sp"
-                android:text="JohnDoe1991"/>
-        </RelativeLayout>
+                android:text="john.doe@email.com"/>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/separatorColor">
-        </RelativeLayout>
+        </LinearLayout>
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="6dp">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:text="Date Of Birth"/>
+            android:layout_margin="4dp"
+            android:padding="10dp"
+            android:layout_weight="0.5"
+            android:orientation="vertical"
+            android:background="@color/card_background">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="16dp"
+                android:textAlignment="center"
+                android:paddingBottom="5dp"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:text="Date of Birth"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginStart="30dp"
+                android:background="@color/separatorColor">
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/dob_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:paddingTop="10dp"
                 android:textSize="22sp"
                 android:text="01/01/1991"/>
-        </RelativeLayout>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/separatorColor">
-        </RelativeLayout>
+        </LinearLayout>
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="6dp">
-            <TextView
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/edit_button"
+                android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:text="Saved Rides"/>
+                android:text="Edit info"/>
 
-            <TextView
+            <Button
+                android:id="@+id/logout_button"
+                android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="16dp"
-                android:textSize="22sp"
-                android:text="3 Rides"/>
-        </RelativeLayout>
+                android:text="Logout"/>
+        </LinearLayout>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/separatorColor">
-        </RelativeLayout>
+
+
 
     </LinearLayout>
 

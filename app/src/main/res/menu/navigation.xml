@@ -3,17 +3,20 @@
 
     <item
         android:id="@+id/navigation_profile"
-        android:icon="@drawable/ic_home_black_24dp"
+        android:icon="@drawable/ic_user"
         android:title="@string/title_profile"/>
 
     <item
         android:id="@+id/navigation_record"
-        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:icon="@drawable/ic_gps"
         android:title="@string/title_record"/>
-
+    <item
+        android:id="@+id/navigation_public_routes"
+        android:icon="@drawable/ic_open_lock"
+        android:title="Public Routes"/>
     <item
         android:id="@+id/navigation_routes"
-        android:icon="@drawable/ic_notifications_black_24dp"
+        android:icon="@drawable/ic_closed_lock"
         android:title="@string/title_routes"/>
 
 </menu>

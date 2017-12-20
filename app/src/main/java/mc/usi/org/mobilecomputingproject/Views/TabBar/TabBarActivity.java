@@ -13,8 +13,10 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import mc.usi.org.mobilecomputingproject.R;
+import mc.usi.org.mobilecomputingproject.Utils.Singleton;
 import mc.usi.org.mobilecomputingproject.Views.Profile.ProfileFragment;
 import mc.usi.org.mobilecomputingproject.Views.Record.RecordFragment;
 import mc.usi.org.mobilecomputingproject.Views.RidesList.RideListFragment;
@@ -62,27 +64,32 @@ public class TabBarActivity extends AppCompatActivity {
             case R.id.navigation_record:
                 fragment = RecordFragment.newInstance();
                 break;
+            case R.id.navigation_public_routes:
+                fragment = RideListFragment.newInstance(RideListFragment.RideType.PUBLIC);
+                break;
             case R.id.navigation_routes:
-                fragment = RideListFragment.newInstance();
+                fragment = RideListFragment.newInstance(RideListFragment.RideType.PERSONAL);
                 break;
         }
 
         int oldSelected = mSelectedItem;
         mSelectedItem = selectedItem.getItemId();
 
+
+
         if (oldSelected == mSelectedItem) {
             Log.d(TAG, "Not switching tabs as the currently selected has been reselected");
             return;
+        } else if (Singleton.getInstance().isRecording()) {
+            Toast.makeText(this, "Currently recording!", Toast.LENGTH_SHORT).show();
 
+            return;
         }
 
         for (int i = 0; i < mBottomNavigationView.getMenu().size(); i++) {
             MenuItem menuItem = mBottomNavigationView.getMenu().getItem(i);
 
-            Log.i(TAG, "menuItem: " + menuItem.getItemId() + "; item: " + selectedItem.getItemId());
-
             if (menuItem.getItemId() == selectedItem.getItemId()) {
-                Log.d(TAG, "Setting selected view to index " + i);
                 mSelectedItem = menuItem.getItemId();
                 menuItem.setChecked(true);
                 break;
