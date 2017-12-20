@@ -148,7 +148,6 @@ public class RideListFragment extends Fragment {
 
         Log.d(TAG, "Loaded up Ride List");
 
-
         return view;
     }
 
@@ -158,8 +157,6 @@ public class RideListFragment extends Fragment {
         private TextView mTimeTextView;
         private TextView mSpeedTextView;
         private TextView mLeanAngleTextView;
-
-
 
         public RideListHolder(View itemView) {
             super(itemView);
