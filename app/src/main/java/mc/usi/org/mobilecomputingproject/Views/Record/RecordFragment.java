@@ -245,7 +245,6 @@ public class RecordFragment extends Fragment implements SensorEventListener {
                 DecimalFormat positionFormat = new DecimalFormat("##.00");
 
                 mPositionLabel.setText(positionFormat.format(newLoc.getLatitude()) + ", " + positionFormat.format(newLoc.getLongitude()));
-                mAngleLabel.setText("-°");
 
                 mAngleLabel.setText(NumberUtils.oneDecimalValue(Math.toDegrees(dataPoint.getGyroZ())) + "°");
 

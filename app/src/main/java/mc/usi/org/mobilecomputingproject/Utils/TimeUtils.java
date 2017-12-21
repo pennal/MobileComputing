@@ -15,9 +15,9 @@ public class TimeUtils {
         long diff = to.getTime() - from.getTime();//as given
 
 
-        long seconds = modifyValue(TimeUnit.MILLISECONDS.toSeconds(diff), 60);
-        long minutes = modifyValue(TimeUnit.MILLISECONDS.toMinutes(diff), 60);
-        long hours = modifyValue(TimeUnit.MILLISECONDS.toHours(diff), 24);
+        long seconds = Math.abs(modifyValue(TimeUnit.MILLISECONDS.toSeconds(diff), 60));
+        long minutes = Math.abs(modifyValue(TimeUnit.MILLISECONDS.toMinutes(diff), 60));
+        long hours = Math.abs(modifyValue(TimeUnit.MILLISECONDS.toHours(diff), 24));
 
 
         return String.format("%s:%s:%s", format.format(hours), format.format(minutes), format.format(seconds));
