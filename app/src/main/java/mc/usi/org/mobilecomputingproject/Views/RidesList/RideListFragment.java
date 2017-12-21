@@ -177,7 +177,7 @@ public class RideListFragment extends Fragment {
 
 
             this.mSpeedTextView.setText(NumberUtils.twoDecimalValues(DataPointUtils.getAverageSpeedInKmPerHour(r.getDataPoints())) + " Km/h");
-            this.mLeanAngleTextView.setText(NumberUtils.oneDecimalValue(DataPointUtils.getMaximumLeanAngle(r.getDataPoints())) + "°");
+            this.mLeanAngleTextView.setText(NumberUtils.oneDecimalValue(Math.toDegrees(DataPointUtils.getMaximumLeanAngle(r.getDataPoints()))) + "°");
         }
 
         @Override

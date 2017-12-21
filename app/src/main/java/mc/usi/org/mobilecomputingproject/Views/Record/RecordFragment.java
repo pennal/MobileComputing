@@ -44,8 +44,10 @@ import mc.usi.org.mobilecomputingproject.Models.Ride;
 import mc.usi.org.mobilecomputingproject.R;
 import mc.usi.org.mobilecomputingproject.REST.API;
 import mc.usi.org.mobilecomputingproject.REST.responses.UserResponse;
+import mc.usi.org.mobilecomputingproject.Utils.DataPointUtils;
 import mc.usi.org.mobilecomputingproject.Utils.DialogUtils;
 import mc.usi.org.mobilecomputingproject.Utils.FailableCallback;
+import mc.usi.org.mobilecomputingproject.Utils.NumberUtils;
 import mc.usi.org.mobilecomputingproject.Utils.Singleton;
 import mc.usi.org.mobilecomputingproject.Utils.TimeUtils;
 import retrofit2.Call;
@@ -244,6 +246,9 @@ public class RecordFragment extends Fragment implements SensorEventListener {
 
                 mPositionLabel.setText(positionFormat.format(newLoc.getLatitude()) + ", " + positionFormat.format(newLoc.getLongitude()));
                 mAngleLabel.setText("-°");
+
+                mAngleLabel.setText(NumberUtils.oneDecimalValue(Math.toDegrees(dataPoint.getGyroZ())) + "°");
+
 
                 if (oldLoc != null) {
                     double distance = oldLoc.distanceTo(newLoc);

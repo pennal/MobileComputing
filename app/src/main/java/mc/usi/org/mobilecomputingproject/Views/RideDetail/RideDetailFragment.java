@@ -59,10 +59,6 @@ public class RideDetailFragment extends Fragment {
     private TextView mGpsPointsTextView;
     private TextView mDistanceTextView;
 
-
-
-
-
     private Ride mRide;
 
     private Button mMakePublicButton;
@@ -152,13 +148,13 @@ public class RideDetailFragment extends Fragment {
 
 
 
-            this.mDistanceTextView.setText(NumberUtils.twoDecimalValues(DataPointUtils.getDistanceInKm(mRide.getDataPoints())) + "Km");
+            this.mDistanceTextView.setText(NumberUtils.twoDecimalValues(DataPointUtils.getDistanceInKm(mRide.getDataPoints())) + " Km");
             this.mDateTextView.setText(DateUtils.getFormattedDate(mRide.getEndDate()));
             this.mDurationTextView.setText(TimeUtils.getFormattedDuration(mRide.getStartDate(), mRide.getEndDate()));
             this.mMaxSpeedTextView.setText(NumberUtils.twoDecimalValues(DataPointUtils.getMaximumSpeedInKmPerHour(mRide.getDataPoints())) + " Km/h");
             this.mAvgSpeedTextView.setText(NumberUtils.twoDecimalValues(DataPointUtils.getAverageSpeedInKmPerHour(mRide.getDataPoints())) + " Km/h");
-            this.mMaxLeanAngleTextView.setText(NumberUtils.twoDecimalValues(DataPointUtils.getMaximumLeanAngle(mRide.getDataPoints())) + "°");
-            this.mAvgLeanAngleTextView.setText(NumberUtils.twoDecimalValues(DataPointUtils.getAverageLeanAngle(mRide.getDataPoints())) + "°");
+            this.mMaxLeanAngleTextView.setText(NumberUtils.twoDecimalValues(Math.toDegrees(DataPointUtils.getMaximumLeanAngle(mRide.getDataPoints()))) + "°");
+            this.mAvgLeanAngleTextView.setText(NumberUtils.twoDecimalValues(Math.toDegrees(DataPointUtils.getAverageLeanAngle(mRide.getDataPoints()))) + "°");
             this.mGpsPointsTextView.setText(mRide.getDataPoints().size() + "");
 
 
